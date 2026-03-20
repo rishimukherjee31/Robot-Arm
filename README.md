@@ -79,8 +79,8 @@ This launches the joystick node which publishes to `meco/joy`. The gripper node 
 
 | Button Index | Action |
 |---|---|
-| `OPEN_BUTTON` (default: `0`) | Opens the gripper while held |
-| `CLOSE_BUTTON` (default: `1`) | Closes the gripper while held |
+| `OPEN_BUTTON` (default: `11`) | Opens the gripper when pressed |
+| `CLOSE_BUTTON` (default: `10`) | Closes the gripper when pressed |
 | Neither pressed | Gripper stops (neutral) |
 
 To find the correct indices for your controller, run:
