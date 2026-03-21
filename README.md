@@ -40,11 +40,11 @@ Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluero
 
 ![System Schematic](images/schematic.png)
 
-<p align="center"><em>System schematic showign wiring between devices.</em></p>
+<p align="center"><em>System schematic showing wiring between devices.</em></p>
 
 ---
 
-## Package Structure
+## Package Structure on Jetson
 
 ```
 ros2_ws_gripper/
@@ -65,7 +65,7 @@ ros2_ws_gripper/
 ## Dependencies
 
 ### System Dependencies
-- ROS2 (Humble)
+- ROS2 (Humble/Jazzy)
 - Python 3
 - python3-serial
 
@@ -127,6 +127,13 @@ source ~/.bashrc
 
 ## Running the Nodes
 
+Using the following commands in new terminal on the jetson to start the node. 
+
+```bash
+source ~/ros2_ws_gripper/install/setup.bash
+ros2 run gripper gripper_serial_node
+```
+
 ### Set Up the Alias (Recommended)
 
 Add the following to your `~/.bashrc`:
@@ -153,19 +160,12 @@ joy
 
 <p align="center"><em>Joystick node publishing to <code>meco/joy</code>.</em></p>
 
-### Step 2 — Launch the Gripper Node
+### Step 2 — Launch the Gripper Node on the Jetson or Laptop
 
 #### With the alias
 
 ```bash
 gripper
-```
-
-#### Without the alias
-
-```bash
-source ~/ros2_ws_gripper/install/setup.bash
-ros2 run gripper gripper_serial_node
 ```
 
 ![Gripper Terminal](images/gripper.png)
