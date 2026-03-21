@@ -36,11 +36,11 @@ Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluero
 </table>
 
 
-<p align="center"><em>System schematic — laptop → Jetson → Teensy → gripper.</em></p>
+<p align="center"><em>Harware used.</em></p>
 
 ![System Schematic](images/schematic.png)
 
-<p align="center"><em>System schematic — laptop → Jetson → Teensy → gripper.</em></p>
+<p align="center"><em>System schematic showign wiring between devices.</em></p>
 
 ---
 
