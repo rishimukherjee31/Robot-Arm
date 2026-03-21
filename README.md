@@ -15,13 +15,13 @@ A serial control node for the [Blue Robotics Newton Subsea Gripper](https://blue
       <a href="https://www.adafruit.com/product/4622">
         <img src="images/teensy.png" alt="Teensy 4.1"/>
       </a>
-      <br/><em>Teensy 4.1</em>
+      <br/><em>PRJC Teensy 4.1 Microcontroller</em>
     </td>
     <td align="center" width="25%">
       <a href="https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html">
         <img src="images/jetson.png" alt="Jetson Orin Nano"/>
       </a>
-      <br/><em>Jetson Orin Nano</em>
+      <br/><em>Jetson Series of Devices (AGX/Orin/Nano)</em>
     </td>
     <td align="center" width="25%">
       <a href="LINK_TO_LAPTOP_PAGE">
