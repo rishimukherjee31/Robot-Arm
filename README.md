@@ -18,19 +18,19 @@ Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluero
       <a href="[LINK_TO_TEENSY_PAGE](https://www.adafruit.com/product/4622?gad_source=1&gad_campaignid=23438252138&gbraid=0AAAAADx9JvTZZ7gwLZCzYd8QUhY5R7cGz&gclid=Cj0KCQjw4PPNBhD8ARIsAMo-icxPHWb_9d_0uVnq1ScXd9T21jGUxf40RBOnBfyuICJ9U_wETMItf4IaAiNBEALw_wcB)">
         <img src="images/teensy.png" alt="Teensy"/>
       </a>
-      <br/><em>Teensy — outputs PWM to the gripper</em>
+      <br/><em>Teensy 4.1</em>
     </td>
     <td align="center" width="25%">
       <a href="[LINK_TO_JETSON_PAGE](https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html?gad_source=1&gad_campaignid=12740460396&gbraid=0AAAAACiAB46QW1SzoVzo1UtJA9xO5rX2P&gclid=Cj0KCQjw4PPNBhD8ARIsAMo-icwXl3e9NurcGByQ_XoXVKZpOYZagCgubZqKdcpjKv-6ngYbDYGzkAQaAg3zEALw_wcB)">
         <img src="images/jetson.png" alt="Jetson"/>
       </a>
-      <br/><em>Jetson — runs the ROS2 gripper node</em>
+      <br/><em>Jetson Orin Nano</em>
     </td>
     <td align="center" width="25%">
       <a href="LINK_TO_LAPTOP_PAGE">
         <img src="images/laptop.jpg" alt="Laptop"/>
       </a>
-      <br/><em>Laptop — runs the joystick node</em>
+      <br/><em>Laptop Running Ubuntu 24.04</em>
     </td>
   </tr>
 </table>
