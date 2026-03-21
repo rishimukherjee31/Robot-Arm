@@ -246,7 +246,7 @@ source ~/ros2_ws_gripper/install/setup.bash
 ros2 pkg list | grep gripper
 ```
 
-### Node is running but gripper is not responding
+Node is running but gripper is not responding
 ```bash
 # Confirm joy messages are flowing and check button indices
 ros2 topic echo meco/joy
