@@ -218,26 +218,26 @@ The Teensy listens for single-character commands over USB serial at 57600 baud:
 
 ## Troubleshooting
 
-### Serial port permission denied
+Serial port permission denied
 ```bash
 sudo usermod -aG dialout $USER
 # Log out and back in for this to take effect
 ```
 
-### Find the Teensy's port
+Find the Teensy's port
 ```bash
 ls /dev/ttyACM*
 # or
 dmesg | tail
 ```
 
-### Monitor serial commands being sent to the Teensy
+Monitor serial commands being sent to the Teensy
 ```bash
 # Stop the gripper node first, then:
 stty -F /dev/ttyACM0 57600 && cat /dev/ttyACM0
 ```
 
-### Package not found
+Package not found
 ```bash
 # Make sure you sourced the workspace
 source ~/ros2_ws_gripper/install/setup.bash
