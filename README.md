@@ -252,7 +252,3 @@ ros2 node info /gripper_serial_node
 ```
 
 ---
-
-## License
-
-MIT
