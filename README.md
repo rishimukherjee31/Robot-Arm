@@ -3,6 +3,8 @@
 
 A serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r2-rp/). The node runs on a [Jetson Orin Nano](https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html), subscribes to `meco/joy` published from a [laptop](LINK_TO_LAPTOP_PAGE) running Ubuntu 24.04, and forwards open/close commands over USB serial to a [Teensy 4.1](https://www.adafruit.com/product/4622) which outputs the corresponding PWM signal to the gripper.
 
+> Note: this package assumes a node reading and publishing the joystick inputs already exists. An alias `joy`spawns the node. in the `irvlab` machines, this alias already exists. 
+
 <table>
   <tr>
     <td align="center" width="25%">
