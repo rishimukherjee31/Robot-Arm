@@ -162,7 +162,7 @@ joy
 
 ### Step 2 — Launch the Gripper Node on the Jetson or Laptop
 
-#### With the alias
+Launch using the alias created:
 
 ```bash
 gripper
