@@ -1,28 +1,27 @@
-# Gripper - ROS2 Package
 
-Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluerobotics.com/store/rov/tools/newton-subsea-gripper/). Subscribes to `meco/joy` and sends open/close/stop commands to a Teensy microcontroller over USB serial.
+# Gripper — ROS2 Package
 
----
+A serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r2-rp/). The node runs on a [Jetson Orin Nano](https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html), subscribes to `meco/joy` published from a [laptop](LINK_TO_LAPTOP_PAGE) running Ubuntu 24.04, and forwards open/close commands over USB serial to a [Teensy 4.1](https://www.adafruit.com/product/4622) which outputs the corresponding PWM signal to the gripper.
 
 ## Hardware
 
 <table>
   <tr>
     <td align="center" width="25%">
-      <a href="[LINK_TO_GRIPPER_PAGE](https://bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r2-rp/)">
+      <a href="https://bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r2-rp/">
         <img src="images/gripper_bluerobotics.png" alt="Newton Gripper"/>
       </a>
       <br/><em>Blue Robotics Newton Subsea Gripper</em>
     </td>
     <td align="center" width="25%">
-      <a href="[LINK_TO_TEENSY_PAGE](https://www.adafruit.com/product/4622?gad_source=1&gad_campaignid=23438252138&gbraid=0AAAAADx9JvTZZ7gwLZCzYd8QUhY5R7cGz&gclid=Cj0KCQjw4PPNBhD8ARIsAMo-icxPHWb_9d_0uVnq1ScXd9T21jGUxf40RBOnBfyuICJ9U_wETMItf4IaAiNBEALw_wcB)">
-        <img src="images/teensy.png" alt="Teensy"/>
+      <a href="https://www.adafruit.com/product/4622">
+        <img src="images/teensy.png" alt="Teensy 4.1"/>
       </a>
       <br/><em>Teensy 4.1</em>
     </td>
     <td align="center" width="25%">
-      <a href="[LINK_TO_JETSON_PAGE](https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html?gad_source=1&gad_campaignid=12740460396&gbraid=0AAAAACiAB46QW1SzoVzo1UtJA9xO5rX2P&gclid=Cj0KCQjw4PPNBhD8ARIsAMo-icwXl3e9NurcGByQ_XoXVKZpOYZagCgubZqKdcpjKv-6ngYbDYGzkAQaAg3zEALw_wcB)">
-        <img src="images/jetson.png" alt="Jetson"/>
+      <a href="https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html">
+        <img src="images/jetson.png" alt="Jetson Orin Nano"/>
       </a>
       <br/><em>Jetson Orin Nano</em>
     </td>
@@ -34,13 +33,12 @@ Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluero
     </td>
   </tr>
 </table>
-
-
-<p align="center"><em>Harware used.</em></p>
+<p align="center"><em>Hardware used in this system.</em></p>
 
 ![System Schematic](images/schematic.png)
 
 <p align="center"><em>System schematic showing wiring between devices.</em></p>
+
 
 ---
 
