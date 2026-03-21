@@ -31,7 +31,9 @@ A serial control node for the [Blue Robotics Newton Subsea Gripper](https://blue
     </td>
   </tr>
 </table>
-<p align="center"><em>List of components required to test the code.</em></p>
+<p align="center"><em>List of components required for the system.</em></p>
+
+---
 
 The Newton Gripper is powered directly from the 4S (16v) LiPo battery, with a shared ground between the battery, gripper, and Teensy. The Teensy outputs a PWM signal from Pin 10 to the gripper's signal wire to control motion. It communicates with the Jetson Orin Nano over USB serial, through which the ROS2 node sends commands. The Jetson and laptop are linked over Ethernet, allowing ROS2 topics ```meco/joy``` to be shared between machines.
 
