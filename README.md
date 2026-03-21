@@ -3,8 +3,6 @@
 
 A serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluerobotics.com/store/thrusters/grippers/newton-gripper-asm-r2-rp/). The node runs on a [Jetson Orin Nano](https://www.seeedstudio.com/NVIDIAr-Jetson-Orintm-Nano-Developer-Kit-p-5617.html), subscribes to `meco/joy` published from a [laptop](LINK_TO_LAPTOP_PAGE) running Ubuntu 24.04, and forwards open/close commands over USB serial to a [Teensy 4.1](https://www.adafruit.com/product/4622) which outputs the corresponding PWM signal to the gripper.
 
-## Hardware
-
 <table>
   <tr>
     <td align="center" width="25%">
@@ -33,7 +31,9 @@ A serial control node for the [Blue Robotics Newton Subsea Gripper](https://blue
     </td>
   </tr>
 </table>
-<p align="center"><em>Hardware used in this system.</em></p>
+<p align="center"><em>List of components required to test the code.</em></p>
+
+The Newton Gripper is powered directly from the 4S (16v) LiPo battery, with a shared ground between the battery, gripper, and Teensy. The Teensy outputs a PWM signal from Pin 10 to the gripper's signal wire to control motion. It communicates with the Jetson Orin Nano over USB serial, through which the ROS2 node sends commands. The Jetson and laptop are linked over Ethernet, allowing ROS2 topics ```meco/joy``` to be shared between machines.
 
 ![System Schematic](images/schematic.png)
 
