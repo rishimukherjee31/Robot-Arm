@@ -44,7 +44,7 @@ Serial control node for the [Blue Robotics Newton Subsea Gripper](https://bluero
 
 ---
 
-## Package Structure on Jetson
+## ROS2 Package Structure
 
 ```
 ros2_ws_gripper/
@@ -59,6 +59,8 @@ ros2_ws_gripper/
         ├── setup.py
         └── setup.cfg
 ```
+
+> You will need to set up this package in the machine connected to the teensy. Any device capable of running ROS2 will work.
 
 ---
 
