@@ -184,8 +184,8 @@ ros2 run gripper gripper_serial_node --ros-args -p serial_port:=/dev/ttyACM1 -p 
 
 | Button Index | Action |
 |---|---|
-| `OPEN_BUTTON` (default: `0`) | Opens the gripper while held |
-| `CLOSE_BUTTON` (default: `1`) | Closes the gripper while held |
+| `OPEN_BUTTON` (default: `11`) | Opens the gripper while held |
+| `CLOSE_BUTTON` (default: `10`) | Closes the gripper while held |
 | Neither pressed | Gripper stops (neutral / 1500µs) |
 
 To find the correct indices for your controller:
@@ -207,6 +207,8 @@ The Teensy listens for single-character commands over USB serial at 57600 baud:
 | `O` | Open gripper (1100µs PWM) |
 | `C` | Close gripper (1900µs PWM) |
 | `S` | Stop / neutral (1500µs PWM) |
+
+> Note: Stop is currently disabled. 
 
 ---
 
