@@ -27,6 +27,9 @@ class GripperSerialNode(Node):
         self.create_subscription(Joy, 'meco/joy', self.joy_callback, 10)
         self.get_logger().info("Gripper serial node ready")
 
+        self.last_cmd = None
+        self.prev_command = None
+
     def joy_callback(self, msg):
         if len(msg.buttons) <= max(OPEN_BUTTON, CLOSE_BUTTON):
             return
@@ -36,12 +39,22 @@ class GripperSerialNode(Node):
         elif msg.buttons[CLOSE_BUTTON]:
             cmd = 'C'
         else:
-            cmd = 'L'
+            return
+
+        if cmd == self.prev_command:
+            # Same button pressed twice — stop and reset so next press resumes
+            self.ser.write(b'S')
+            self.get_logger().info("Gripper → S (double press stop)")
+            self.prev_command = None
+            self.last_cmd = 'S'
+            return
 
         if cmd != self.last_cmd:
             self.ser.write(cmd.encode())
             self.get_logger().info(f"Gripper → {cmd}")
             self.last_cmd = cmd
+
+        self.prev_command = cmd
 
     def destroy_node(self):
         self.ser.write(b'S')
