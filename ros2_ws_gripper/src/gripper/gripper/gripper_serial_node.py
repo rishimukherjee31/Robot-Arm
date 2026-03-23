@@ -4,6 +4,11 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Joy
 import serial
+import time
+
+# Debouncer
+DOUBLE_PRESS_MIN_MS = 200   # ignore if same command seen within this window
+DOUBLE_PRESS_MAX_MS = 500   # only count as double press within this window
 
 OPEN_BUTTON  = 11   # Right stick button
 CLOSE_BUTTON = 10   # Left stick button
@@ -29,6 +34,7 @@ class GripperSerialNode(Node):
 
         self.last_cmd = None
         self.prev_command = None
+        self.last_cmd_time = 0.
 
     def joy_callback(self, msg):
         if len(msg.buttons) <= max(OPEN_BUTTON, CLOSE_BUTTON):
@@ -40,13 +46,20 @@ class GripperSerialNode(Node):
             cmd = 'C'
         else:
             return
+            
+        now = time.time() * 1000  # ms
+        elapsed = now - self.last_cmd_time
+        
+        if elapsed < DOUBLE_PRESS_MIN_MS:
+            return
 
-        if cmd == self.prev_command:
-            # Same button pressed twice — stop and reset so next press resumes
+        if cmd == self.prev_command and elapsed < DOUBLE_PRESS_MAX_MS:
+            # Confirmed double press — stop and reset
             self.ser.write(b'S')
             self.get_logger().info("Gripper → S (double press stop)")
             self.prev_command = None
             self.last_cmd = 'S'
+            self.last_cmd_time = now
             return
 
         if cmd != self.last_cmd:
@@ -55,6 +68,7 @@ class GripperSerialNode(Node):
             self.last_cmd = cmd
 
         self.prev_command = cmd
+        self.last_cmd_time = now
 
     def destroy_node(self):
         self.ser.write(b'S')
